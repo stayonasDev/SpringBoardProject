@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="contain">
+    <div> <a th:href="@{/board/boardForm}" th:text="등록" /> </div>
+<div th:each="board : ${boardList}">
+<div th:text="${board.title}"><a th:href="@{/board/{id}}(board.getId())">게시물1</a></div>
+<div th:text="${board.content}">내용1</div>
+<div th:text="${board.authId}">사용자ID</div>
+<div th:text="${board.nickname}">닉네임</div>
+<div th:text="${board.createDate}">생성 날짜</div>
+<div th:text="${board.updateDate}">수정 날짜</div>
+</div>
+<!--    contain -->
+</div>
+</body>
+</html>
